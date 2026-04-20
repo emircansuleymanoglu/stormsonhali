@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { services } from "@/lib/site";
 
 type Service = (typeof services)[number];
@@ -7,7 +8,10 @@ export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
 
   return (
-    <article className="group overflow-hidden rounded-lg border border-line bg-white transition hover:-translate-y-1 hover:border-brand hover:shadow-xl hover:shadow-blue-950/10">
+    <Link
+      href={`/services/${service.slug}`}
+      className="group block overflow-hidden rounded-lg border border-line bg-white transition hover:-translate-y-1 hover:border-brand hover:shadow-xl hover:shadow-blue-950/10"
+    >
       <div className="relative h-56 overflow-hidden">
         <Image
           src={service.image}
@@ -25,6 +29,6 @@ export function ServiceCard({ service }: { service: Service }) {
         <p className="mt-3 leading-7 text-muted">{service.summary}</p>
         <p className="mt-5 text-sm font-bold text-brand">Bekijk dienst</p>
       </div>
-    </article>
+    </Link>
   );
 }

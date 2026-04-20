@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { ButtonLink } from "@/components/button-link";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
@@ -53,6 +55,14 @@ export default function ServicesPage() {
                     {service.summary}
                   </p>
                   <p className="mt-6 leading-8 text-muted">{service.details}</p>
+                  <ButtonLink
+                    href={`/services/${service.slug}`}
+                    variant="secondary"
+                    className="mt-8"
+                  >
+                    Bekijk dienst
+                    <ArrowRight size={18} />
+                  </ButtonLink>
                 </div>
               </article>
             );
