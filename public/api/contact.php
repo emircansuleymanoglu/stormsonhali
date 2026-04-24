@@ -54,11 +54,11 @@ foreach ($labels as $key => $label) {
     }
 }
 
-$to = 'info@stormlogisitcs.nl';
+$to = 'info@stormlogistics.nl';
 $subject = 'Storm Logistics aanvraag van ' . $name;
 $body = implode("\n", $lines);
 $headers = [
-    'From: Storm Logistics <info@stormlogisitcs.nl>',
+    'From: Storm Logistics <info@stormlogistics.nl>',
     'Reply-To: ' . $email,
     'Content-Type: text/plain; charset=UTF-8',
 ];

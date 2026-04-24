@@ -13,19 +13,23 @@ export function ContactForm({ mode = "contact" }: { mode?: "contact" | "quote" }
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
 
-    const response = await fetch("/api/contact.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, formType: mode }),
-    });
+    try {
+      const response = await fetch("/api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, formType: mode }),
+      });
 
-    if (response.ok) {
-      form.reset();
-      setState("success");
-      return;
+      if (response.ok) {
+        form.reset();
+        setState("success");
+        return;
+      }
+
+      setState("error");
+    } catch {
+      setState("error");
     }
-
-    setState("error");
   }
 
   return (

@@ -13,9 +13,9 @@ import {
 
 export const site = {
   name: "Storm Logistics",
-  url: "https://example.com",
+  url: "https://stormlogistics.nl",
   phone: "+31 685 602 308",
-  email: "info@stormlogisitcs.nl",
+  email: "info@stormlogistics.nl",
   whatsapp: "31685602308",
   address: "Parkweg 305, 3119 CJ Schiedam, Nederland",
   city: "Schiedam",
