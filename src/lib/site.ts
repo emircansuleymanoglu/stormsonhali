@@ -110,8 +110,7 @@ export const services = [
       "Distributie naar winkels, magazijnen en zakelijke klanten.",
       "Goederenstromen met behoefte aan consolidatie.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+    image: "/volvo.png",
   },
   {
     title: "Supply chain ondersteuning",
