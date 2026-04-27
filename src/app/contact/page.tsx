@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { MapPanel } from "@/components/map-panel";
 import { PageHero } from "@/components/page-hero";
-import { contactCards } from "@/lib/site";
+import { contactCards, proofPoints } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -33,6 +33,18 @@ export default function ContactPage() {
                 </div>
               );
             })}
+            <div className="rounded-lg bg-surface p-6">
+              <p className="text-sm font-black uppercase tracking-wider text-brand">
+                Wat u van ons mag verwachten
+              </p>
+              <div className="mt-4 grid gap-3">
+                {proofPoints.slice(0, 3).map((point) => (
+                  <p key={point} className="text-sm font-semibold text-muted">
+                    {point}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="rounded-lg border border-line bg-white p-6 premium-shadow sm:p-8">
             <ContactForm />

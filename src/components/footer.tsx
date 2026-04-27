@@ -84,7 +84,7 @@ export function Footer() {
       <div className="border-t border-white/10 py-5">
         <div className="container-shell flex flex-col gap-3 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; 2026 {site.name}. Alle rechten voorbehouden.</p>
-          <p>Gebouwd voor snelheid, duidelijkheid en conversie.</p>
+          <p>Transport, opslag en distributie met heldere uitvoering.</p>
         </div>
       </div>
     </footer>

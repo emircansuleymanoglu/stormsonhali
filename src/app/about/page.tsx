@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
-import { stats } from "@/lib/site";
+import { sectors, stats, testimonials } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Over ons",
@@ -69,6 +69,48 @@ export default function AboutPage() {
                 <p className="text-sm font-black text-brand">0{index + 1}</p>
                 <h3 className="mt-4 text-2xl font-black">{title}</h3>
                 <p className="mt-4 leading-7 text-muted">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <SectionHeader
+              eyebrow="Sectorfocus"
+              title="Aangesloten op de dynamiek van dagelijkse logistiek."
+              text="Wij werken voor teams waar planning, voorraad en aflevering direct invloed hebben op klantbeleving en operatie."
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {sectors.map((sector) => (
+              <article key={sector.title} className="rounded-lg border border-line bg-white p-6">
+                <h3 className="text-lg font-black">{sector.title}</h3>
+                <p className="mt-3 leading-7 text-muted">{sector.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-20 sm:py-28">
+        <div className="container-shell">
+          <SectionHeader
+            align="center"
+            eyebrow="Ervaring"
+            title="Samenwerkingen die draaien om rust, ritme en leverbetrouwbaarheid."
+            text="De beste waardering krijgen wij wanneer een logistiek team minder hoeft te improviseren."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <article key={testimonial.quote} className="rounded-lg bg-white p-7">
+                <p className="leading-8 text-foreground">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <p className="mt-6 font-black">{testimonial.name}</p>
+                <p className="text-sm font-semibold text-muted">{testimonial.company}</p>
               </article>
             ))}
           </div>

@@ -173,6 +173,76 @@ export const whyUs = [
 
 export const trustLogos = ["Retail", "Food-grade", "E-commerce", "Industrie"];
 
+export const sectors = [
+  {
+    title: "Retail & winkelbevoorrading",
+    text: "Strakke levervensters, vaste routes en duidelijke afleverafspraken voor winkels en distributiepunten.",
+  },
+  {
+    title: "Food-grade logistiek",
+    text: "Hygiënische processen, betrouwbare overdrachten en aandacht voor productintegriteit in de keten.",
+  },
+  {
+    title: "E-commerce & fulfilment",
+    text: "Opslag, palletstromen en distributie die meebewegen met pieken, seizoenen en dagelijkse volumes.",
+  },
+  {
+    title: "Industrie & projectlading",
+    text: "Capaciteit voor zendingen waarbij timing, coördinatie en praktische opvolging bepalend zijn.",
+  },
+];
+
+export const proofPoints = [
+  "Direct contact met planning en operations.",
+  "Schaalbaar voor losse ritten en vaste stromen.",
+  "Combinatie van transport, opslag en distributie.",
+  "Heldere communicatie bij wijzigingen of vertraging.",
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Storm Logistics denkt operationeel mee en reageert snel wanneer volumes of levermomenten verschuiven.",
+    name: "Operations manager",
+    company: "Retail leverancier",
+  },
+  {
+    quote:
+      "Wij zochten rust in de planning. Die kregen we door korte lijnen, duidelijke terugkoppeling en strakke uitvoering.",
+    name: "Supply chain lead",
+    company: "E-commerce merk",
+  },
+  {
+    quote:
+      "De combinatie van opslag en distributie gaf ons meer grip op voorraad en minder losse schakels in het proces.",
+    name: "Logistics coordinator",
+    company: "Food-grade producent",
+  },
+];
+
+export const faqItems = [
+  {
+    question: "Welke informatie hebben jullie nodig voor een offerte?",
+    answer:
+      "Idealiter ontvangen wij ophaal- en afleverlocaties, volume of aantal pallets, gewenste timing, frequentie en eventuele handling-eisen. Daarmee kunnen wij snel een praktische inschatting maken.",
+  },
+  {
+    question: "Kunnen transport en opslag gecombineerd worden?",
+    answer:
+      "Ja. Veel klanten combineren wegtransport, tijdelijke opslag, orderpicking en palletdistributie in één beheerde goederenstroom.",
+  },
+  {
+    question: "Werken jullie alleen met vaste contracten?",
+    answer:
+      "Nee. Wij ondersteunen zowel losse transportaanvragen als structurele routes, terugkerende distributie en langere operationele samenwerking.",
+  },
+  {
+    question: "Hoe snel reageren jullie op een aanvraag?",
+    answer:
+      "Nieuwe aanvragen worden zo snel mogelijk beoordeeld door operations. Bij complete informatie kunnen wij vaak direct de volgende stap of eerste prijsindicatie terugkoppelen.",
+  },
+];
+
 export const contactCards = [
   { label: "Bel de planning", value: site.phone, icon: PhoneCall },
   { label: "E-mail operations", value: site.email, icon: Factory },

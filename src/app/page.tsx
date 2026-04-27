@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/section-header";
 import { ServiceCard } from "@/components/service-card";
 import { StatsBand } from "@/components/stats-band";
 import { services, site, trustLogos, whyUs } from "@/lib/site";
+import { faqItems, proofPoints, sectors, testimonials } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -115,6 +116,79 @@ export default function Home() {
       </section>
 
       <section className="py-20 sm:py-28">
+        <div className="container-shell">
+          <SectionHeader
+            eyebrow="Voor wie"
+            title="Ondersteuning voor teams die logistiek zonder ruis willen laten lopen."
+            text="Wij sluiten aan op dagelijkse operatie, seizoenspieken en terugkerende leverafspraken."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {sectors.map((sector) => (
+              <article key={sector.title} className="rounded-lg border border-line bg-white p-6">
+                <h3 className="text-xl font-black">{sector.title}</h3>
+                <p className="mt-4 leading-7 text-muted">{sector.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-20 sm:py-28">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <SectionHeader
+              eyebrow="Samenwerken"
+              title="Wat klanten waarderen in de dagelijkse samenwerking."
+              text="Goede logistiek voelt georganiseerd, voorspelbaar en dichtbij. Dat is precies de ervaring waar wij op sturen."
+            />
+            <div className="mt-8 grid gap-4">
+              {proofPoints.map((point) => (
+                <div key={point} className="flex gap-3 rounded-lg bg-white p-5">
+                  <CheckCircle2 size={20} className="mt-1 shrink-0 text-brand" />
+                  <p className="leading-7 text-muted">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grid gap-5">
+            {testimonials.map((testimonial) => (
+              <article key={testimonial.quote} className="rounded-lg bg-white p-7">
+                <p className="text-lg leading-8 text-foreground">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <p className="mt-6 font-black">{testimonial.name}</p>
+                <p className="text-sm font-semibold text-muted">{testimonial.company}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28">
+        <div className="container-shell">
+          <SectionHeader
+            align="center"
+            eyebrow="Werkwijze"
+            title="Van aanvraag naar uitvoering in drie heldere stappen."
+            text="Een snelle start ontstaat wanneer iedereen vanaf het begin weet wat belangrijk is."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              ["Inventarisatie", "We nemen volumes, frequentie, laad- en lospunten en timing kort en concreet door."],
+              ["Operationeel plan", "U ontvangt een voorstel voor capaciteit, route-aanpak, handling en communicatie."],
+              ["Dagelijkse uitvoering", "Na akkoord voeren we uit met vaste opvolging, terugkoppeling en zicht op prestaties."],
+            ].map(([title, text], index) => (
+              <article key={title} className="rounded-lg border border-line bg-white p-7">
+                <p className="text-sm font-black text-brand">0{index + 1}</p>
+                <h3 className="mt-4 text-2xl font-black">{title}</h3>
+                <p className="mt-4 leading-7 text-muted">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28">
         <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeader
@@ -128,6 +202,25 @@ export default function Home() {
           </div>
           <div className="rounded-lg border border-line bg-white p-6 premium-shadow sm:p-8">
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-20 sm:py-28">
+        <div className="container-shell">
+          <SectionHeader
+            align="center"
+            eyebrow="Veelgestelde vragen"
+            title="Vragen die vaak terugkomen bij nieuwe aanvragen."
+            text="Zo krijgt een prospect sneller vertrouwen in de samenwerking en het proces."
+          />
+          <div className="mt-12 grid gap-4">
+            {faqItems.map((item) => (
+              <article key={item.question} className="rounded-lg bg-white p-6">
+                <h3 className="text-lg font-black">{item.question}</h3>
+                <p className="mt-3 leading-7 text-muted">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
