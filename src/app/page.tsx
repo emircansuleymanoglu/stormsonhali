@@ -128,7 +128,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 max-w-3xl rounded-lg border border-white/15 bg-[#101828]/68 p-5 text-left shadow-2xl shadow-black/20 backdrop-blur">
+            <div className="quality-panel mt-8 max-w-3xl rounded-lg border border-white/15 bg-[#101828]/68 p-5 text-left shadow-2xl shadow-black/20 backdrop-blur">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-xs font-black uppercase text-white/50">
@@ -156,7 +156,7 @@ export default function Home() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-md border border-white/10 bg-white/7 px-4 py-3"
+                    className="quality-metric rounded-md border border-white/10 bg-white/7 px-4 py-3"
                   >
                     <p className="text-xs font-black uppercase text-white/45">
                       {label}

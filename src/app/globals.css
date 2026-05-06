@@ -90,6 +90,21 @@ html {
   gap: 12px;
 }
 
+.quality-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.quality-panel::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(115deg, transparent 0%, rgba(121, 208, 255, 0.08) 38%, transparent 58%);
+  transform: translateX(-120%);
+  animation: panel-sheen 6.5s ease-in-out infinite;
+}
+
 .quality-flow span {
   position: relative;
   height: 4px;
@@ -120,6 +135,20 @@ html {
   animation: quality-glow 3.2s ease-in-out infinite;
 }
 
+.quality-metric {
+  position: relative;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.quality-metric:hover {
+  border-color: rgba(121, 208, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -129,6 +158,18 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes panel-sheen {
+  0%,
+  62%,
+  100% {
+    transform: translateX(-120%);
+  }
+
+  82% {
+    transform: translateX(120%);
   }
 }
 
