@@ -98,26 +98,26 @@ export default function Home() {
         </div>
 
         <div className="container-shell relative grid min-h-[calc(100vh-96px)] content-center py-20 sm:py-24">
-          <div className="max-w-3xl animate-rise">
+          <div className="mx-auto w-full max-w-[720px] animate-rise text-center lg:mx-0 lg:ml-[8%] lg:max-w-[760px] lg:text-left xl:ml-[10%]">
             <p className="mb-5 text-sm font-black uppercase text-white/70">
               Logistieke partner in Nederland
             </p>
-            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-[4.7rem] lg:leading-[0.96]">
               Essentiele supply chains, met precisie in beweging.
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-9 text-white/76">
+            <p className="mx-auto mt-6 max-w-2xl text-xl leading-9 text-white/76 lg:mx-0">
               Transport, opslag en distributie voor bedrijven die snelheid,
               controle en een logistiek team nodig hebben dat elke afspraak
               zichtbaar houdt.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <ButtonLink href="/quote">Offerte aanvragen</ButtonLink>
               <ButtonLink href="/services" variant="light">
                 Bekijk diensten
                 <ArrowRight size={18} />
               </ButtonLink>
             </div>
-            <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+            <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-3 lg:mx-0">
               {heroBadges.map((item) => (
                 <div
                   key={item}
@@ -128,7 +128,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 max-w-2xl rounded-lg border border-white/15 bg-[#101828]/72 p-5 shadow-2xl shadow-black/20 backdrop-blur">
+            <div className="mx-auto mt-8 max-w-3xl rounded-lg border border-white/15 bg-[#101828]/68 p-5 text-left shadow-2xl shadow-black/20 backdrop-blur lg:mx-0">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-xs font-black uppercase text-white/50">
