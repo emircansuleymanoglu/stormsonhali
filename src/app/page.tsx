@@ -4,11 +4,9 @@ import {
   BadgeCheck,
   CheckCircle2,
   Clock3,
-  Gauge,
   PackageCheck,
   Route,
   ShieldCheck,
-  Truck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
 import { ContactForm } from "@/components/contact-form";
@@ -130,30 +128,47 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-[1fr_180px]">
-              <div className="rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur">
-                <div className="relative h-12 overflow-hidden rounded-md bg-white/8">
-                  <div className="absolute left-4 right-4 top-1/2 h-px bg-white/30" />
-                  <div className="truck-runner absolute top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-lg bg-white text-brand shadow-lg shadow-black/20">
-                    <Truck size={22} />
-                  </div>
+            <div className="mt-8 max-w-2xl rounded-lg border border-white/15 bg-[#101828]/72 p-5 shadow-2xl shadow-black/20 backdrop-blur">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-xs font-black uppercase text-white/50">
+                    Operation control
+                  </p>
+                  <p className="mt-1 text-sm font-bold text-white/82">
+                    Route Schiedam - Benelux distributie
+                  </p>
                 </div>
-                <p className="mt-3 text-sm font-bold text-white/72">
-                  Live routeplanning met actieve opvolging
-                </p>
-              </div>
-              <div className="speed-card rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur">
-                <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-lg bg-[#79d0ff] text-[#0d1524]">
-                    <Gauge size={24} />
+                <div className="flex items-center gap-3 rounded-md border border-white/10 bg-white/8 px-3 py-2">
+                  <span className="status-pulse size-2.5 rounded-full bg-[#79d0ff]" />
+                  <span className="text-xs font-black uppercase text-white/68">
+                    live planning
                   </span>
-                  <div>
-                    <p className="text-2xl font-black leading-none">98.7%</p>
-                    <p className="mt-1 text-xs font-bold uppercase text-white/60">
-                      op tijd
+                </div>
+              </div>
+              <div className="route-telemetry mt-5">
+                <span className="route-dot route-dot-start" />
+                <span className="route-dot route-dot-mid" />
+                <span className="route-dot route-dot-end" />
+                <span className="route-sweep" />
+              </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {[
+                  ["ETA", "14:40"],
+                  ["OTD", "98.7%"],
+                  ["Status", "Onderweg"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="rounded-md border border-white/10 bg-white/7 px-4 py-3"
+                  >
+                    <p className="text-xs font-black uppercase text-white/45">
+                      {label}
+                    </p>
+                    <p className="mt-1 text-lg font-black text-white">
+                      {value}
                     </p>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
