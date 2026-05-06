@@ -83,6 +83,26 @@ html {
   animation-range: entry 0% cover 28%;
 }
 
+.truck-runner {
+  animation: truck-run 4.8s ease-in-out infinite;
+}
+
+.truck-runner::after {
+  position: absolute;
+  right: -26px;
+  width: 22px;
+  height: 2px;
+  content: "";
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    10px 0 0 rgba(255, 255, 255, 0.36),
+    19px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.speed-card {
+  animation: speed-breathe 2.8s ease-in-out infinite;
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -92,6 +112,39 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes truck-run {
+  0% {
+    left: 8px;
+    transform: translateY(-50%) translateX(-18px);
+  }
+
+  45% {
+    left: calc(100% - 48px);
+    transform: translateY(-50%) translateX(0);
+  }
+
+  55% {
+    left: calc(100% - 48px);
+    transform: translateY(-50%) translateX(0);
+  }
+
+  100% {
+    left: 8px;
+    transform: translateY(-50%) translateX(-18px);
+  }
+}
+
+@keyframes speed-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(121, 208, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 34px rgba(121, 208, 255, 0.18);
   }
 }
 

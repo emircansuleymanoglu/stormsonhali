@@ -4,9 +4,11 @@ import {
   BadgeCheck,
   CheckCircle2,
   Clock3,
+  Gauge,
   PackageCheck,
   Route,
   ShieldCheck,
+  Truck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
 import { ContactForm } from "@/components/contact-form";
@@ -127,6 +129,32 @@ export default function Home() {
                   {item}
                 </div>
               ))}
+            </div>
+            <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-[1fr_180px]">
+              <div className="rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur">
+                <div className="relative h-12 overflow-hidden rounded-md bg-white/8">
+                  <div className="absolute left-4 right-4 top-1/2 h-px bg-white/30" />
+                  <div className="truck-runner absolute top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-lg bg-white text-brand shadow-lg shadow-black/20">
+                    <Truck size={22} />
+                  </div>
+                </div>
+                <p className="mt-3 text-sm font-bold text-white/72">
+                  Live routeplanning met actieve opvolging
+                </p>
+              </div>
+              <div className="speed-card rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur">
+                <div className="flex items-center gap-3">
+                  <span className="grid size-11 place-items-center rounded-lg bg-[#79d0ff] text-[#0d1524]">
+                    <Gauge size={24} />
+                  </span>
+                  <div>
+                    <p className="text-2xl font-black leading-none">98.7%</p>
+                    <p className="mt-1 text-xs font-bold uppercase text-white/60">
+                      op tijd
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
