@@ -83,73 +83,41 @@ html {
   animation-range: entry 0% cover 28%;
 }
 
-.route-telemetry {
+.quality-flow {
   position: relative;
-  height: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.quality-flow span {
+  position: relative;
+  height: 4px;
   overflow: hidden;
-}
-
-.route-telemetry::before {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 21px;
-  height: 1px;
-  content: "";
-  background:
-    linear-gradient(90deg, transparent 0 4px, rgba(255, 255, 255, 0.26) 4px 14px, transparent 14px 24px),
-    linear-gradient(90deg, rgba(121, 208, 255, 0.05), rgba(121, 208, 255, 0.55), rgba(255, 255, 255, 0.12));
-  background-size:
-    24px 1px,
-    100% 1px;
-}
-
-.route-sweep {
-  position: absolute;
-  top: 19px;
-  left: 0;
-  width: 32%;
-  height: 5px;
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.quality-flow span::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
   background: linear-gradient(90deg, transparent, rgba(121, 208, 255, 0.9), transparent);
-  filter: blur(0.2px);
-  animation: route-sweep 4.2s ease-in-out infinite;
+  animation: quality-scan 3.6s ease-in-out infinite;
 }
 
-.route-dot {
-  position: absolute;
-  top: 17px;
-  z-index: 1;
-  width: 9px;
-  height: 9px;
-  border: 2px solid rgba(121, 208, 255, 0.9);
-  border-radius: 999px;
-  background: #101828;
+.quality-flow span:nth-child(2)::after {
+  animation-delay: 220ms;
 }
 
-.route-dot::after {
-  position: absolute;
-  inset: -8px;
-  content: "";
-  border: 1px solid rgba(121, 208, 255, 0.22);
-  border-radius: inherit;
+.quality-flow span:nth-child(3)::after {
+  animation-delay: 440ms;
 }
 
-.route-dot-start {
-  left: 0;
-}
-
-.route-dot-mid {
-  left: 50%;
-}
-
-.route-dot-end {
-  right: 0;
-}
-
-.status-pulse {
-  box-shadow: 0 0 0 0 rgba(121, 208, 255, 0.38);
-  animation: status-pulse 2.4s ease-out infinite;
+.quality-seal {
+  animation: quality-glow 3.2s ease-in-out infinite;
 }
 
 @keyframes rise-in {
@@ -164,37 +132,31 @@ html {
   }
 }
 
-@keyframes route-sweep {
-  0% {
-    transform: translateX(-42%);
+@keyframes quality-scan {
+  0%,
+  100% {
+    transform: translateX(-105%);
     opacity: 0;
   }
 
-  18% {
+  35% {
     opacity: 1;
   }
 
-  78% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(330%);
+  70% {
+    transform: translateX(105%);
     opacity: 0;
   }
 }
 
-@keyframes status-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(121, 208, 255, 0.38);
-  }
-
-  70% {
-    box-shadow: 0 0 0 9px rgba(121, 208, 255, 0);
-  }
-
+@keyframes quality-glow {
+  0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(121, 208, 255, 0);
+    box-shadow: inset 0 0 0 rgba(121, 208, 255, 0), 0 0 0 rgba(121, 208, 255, 0);
+  }
+
+  50% {
+    box-shadow: inset 0 0 18px rgba(121, 208, 255, 0.12), 0 0 28px rgba(121, 208, 255, 0.12);
   }
 }
 
