@@ -145,7 +145,7 @@ export const services = [
 export const stats = [
   { value: "24/7", label: "zicht op de planning" },
   { value: "98.7%", label: "op tijd geleverd" },
-  { value: "Europe", label: "dagelijks netwerkbereik" },
+  { value: "Benelux", label: "dagelijks netwerkbereik" },
 ];
 
 export const whyUs = [
@@ -180,7 +180,7 @@ export const sectors = [
   },
   {
     title: "Food-grade logistiek",
-    text: "Hygiënische processen, betrouwbare overdrachten en aandacht voor productintegriteit in de keten.",
+    text: "Hygienische processen, betrouwbare overdrachten en aandacht voor productintegriteit in de keten.",
   },
   {
     title: "E-commerce & fulfilment",
@@ -188,7 +188,7 @@ export const sectors = [
   },
   {
     title: "Industrie & projectlading",
-    text: "Capaciteit voor zendingen waarbij timing, coördinatie en praktische opvolging bepalend zijn.",
+    text: "Capaciteit voor zendingen waarbij timing, coordinatie en praktische opvolging bepalend zijn.",
   },
 ];
 
@@ -229,7 +229,7 @@ export const faqItems = [
   {
     question: "Kunnen transport en opslag gecombineerd worden?",
     answer:
-      "Ja. Veel klanten combineren wegtransport, tijdelijke opslag, orderpicking en palletdistributie in één beheerde goederenstroom.",
+      "Ja. Veel klanten combineren wegtransport, tijdelijke opslag, orderpicking en palletdistributie in een beheerde goederenstroom.",
   },
   {
     question: "Werken jullie alleen met vaste contracten?",

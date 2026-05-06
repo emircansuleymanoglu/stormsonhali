@@ -6,8 +6,8 @@ import { navItems, site } from "@/lib/site";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-white/95 backdrop-blur">
-      <div className="container-shell flex h-24 items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-white/92 shadow-sm shadow-blue-950/5 backdrop-blur-xl">
+      <div className="container-shell flex h-20 items-center justify-between gap-6">
         <Link
           href="/"
           className="flex items-center"
@@ -19,7 +19,7 @@ export function Header() {
             width={372}
             height={120}
             priority
-            className="h-[64px] w-auto max-w-[240px] object-contain sm:h-[72px] sm:max-w-[300px]"
+            className="h-[58px] w-auto max-w-[230px] object-contain sm:h-[64px] sm:max-w-[280px]"
           />
         </Link>
 
@@ -28,7 +28,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-bold text-muted transition hover:text-brand"
+              className="relative text-sm font-bold text-muted transition hover:text-brand after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all hover:after:w-full"
             >
               {item.label}
             </Link>
