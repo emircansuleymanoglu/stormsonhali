@@ -6,6 +6,18 @@ type FormState = "idle" | "loading" | "success" | "error";
 
 export function ContactForm({ mode = "contact" }: { mode?: "contact" | "quote" }) {
   const [state, setState] = useState<FormState>("idle");
+  const supportItems =
+    mode === "quote"
+      ? [
+          ["Reactie", "Binnen 1 werkdag"],
+          ["Benodigd", "Route, volume en timing"],
+          ["Vervolg", "Praktische offerte"],
+        ]
+      : [
+          ["Reactie", "Snel bij de juiste persoon"],
+          ["Planning", "Direct contact met operations"],
+          ["Urgent", "Bel of WhatsApp voor spoed"],
+        ];
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -96,6 +108,19 @@ export function ContactForm({ mode = "contact" }: { mode?: "contact" | "quote" }
           Er ging iets mis. Stuur ons rechtstreeks een e-mail.
         </p>
       ) : null}
+      <div className="mt-2 rounded-lg border border-line bg-surface p-4">
+        <p className="text-sm font-black uppercase text-muted">
+          {mode === "quote" ? "Voor een snelle offerte" : "Wat gebeurt hierna"}
+        </p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {supportItems.map(([label, value]) => (
+            <div key={label} className="rounded-md bg-white px-4 py-3">
+              <p className="text-xs font-black uppercase text-muted">{label}</p>
+              <p className="mt-1 text-sm font-black text-foreground">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </form>
   );
 }
